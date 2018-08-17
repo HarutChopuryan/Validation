@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Validation.Forms.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms">
+    <StackLayout>
+        <local:EntryView
+            x:Name="entry"
+            Title="First Name"
+            Text="{Binding FirstName, Mode=TwoWay}"
+            ValidationId="FirstName" />
+    </StackLayout>
+</ContentPage>
