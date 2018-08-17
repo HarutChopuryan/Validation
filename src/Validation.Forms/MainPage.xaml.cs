@@ -15,7 +15,6 @@ namespace Validation.Forms
 		{
 		    _viewModel = viewModel;
             InitializeComponent();
-		    _viewModel.FirstName = "First Name";
 		    BindingContext = _viewModel;
 		}
 	}

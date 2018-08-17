@@ -6,9 +6,20 @@
     xmlns:local="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms">
     <StackLayout>
         <local:EntryView
-            x:Name="entry"
             Title="First Name"
             Text="{Binding FirstName, Mode=TwoWay}"
             ValidationId="FirstName" />
+        <local:EntryView
+            Title="Passport No"
+            Text="{Binding PassportN, Mode=TwoWay}"
+            ValidationId="PassportN" />
+        <local:EntryView
+            Title="Address"
+            Text="{Binding Address, Mode=TwoWay}"
+            ValidationId="Address" />
+        <local:EntryView
+            Title="Zip Code"
+            Text="{Binding ZipCode, Mode=TwoWay}"
+            ValidationId="ZipCode" />
     </StackLayout>
 </ContentPage>
