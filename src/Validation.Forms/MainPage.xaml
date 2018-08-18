@@ -4,28 +4,72 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms">
-    <StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <local:EntryView
+            Grid.Row="0"
             Title="First Name"
             Text="{Binding FirstName, Mode=TwoWay}"
             ValidationId="FirstName" />
         <local:EntryView
+            Grid.Row="1"
             Title="Last Name"
             Text="{Binding LastName, Mode=TwoWay}"
             ValidationId="LastName" />
-        <local:DatePickerView Title="Birth Date"/>
-        <local:PickerView Title="Gender" ItemsSource="{Binding Gender}"/>
+        <local:DatePickerView
+            Grid.Row="2" Title="Birth Date"/>
+        <local:PickerView
+            Grid.Row="3" Title="Gender" ItemsSource="{Binding Gender}"/>
         <local:EntryView
+            Grid.Row="4"
             Title="Passport No"
             Text="{Binding PassportN, Mode=TwoWay}"
             ValidationId="PassportN" />
         <local:EntryView
+            Grid.Row="5"
             Title="Address"
             Text="{Binding Address, Mode=TwoWay}"
             ValidationId="Address" />
+        <Grid Grid.Row="6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <local:PickerView
+                Grid.Row="0"
+                Title="Country"
+                ItemsSource="{Binding Countries}"/>
+            <Button 
+                Grid.Row="0" 
+                WidthRequest="245"
+                HorizontalOptions="End"
+                Command="{Binding LoadCountriesCommand}"
+                BackgroundColor="Transparent"/>
+            <local:PickerView
+                Grid.Row="1"
+                Title="City"
+                ItemsSource="{Binding Cities}"/>
+            <Button 
+                Grid.Row="1" 
+                WidthRequest="245"
+                HorizontalOptions="End"
+                BackgroundColor="Transparent"
+                Command="{Binding LoadCountriesCommand}"/>
+        </Grid>
         <local:EntryView
+            Grid.Row="7"
             Title="Zip Code"
             Text="{Binding ZipCode, Mode=TwoWay}"
             ValidationId="ZipCode" />
-    </StackLayout>
+    </Grid>
 </ContentPage>

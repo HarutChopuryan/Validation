@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Windows.Input;
+using Validation.UI.ViewModels.Base;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

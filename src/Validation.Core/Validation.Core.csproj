@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Grace" Version="6.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
 
 </Project>
