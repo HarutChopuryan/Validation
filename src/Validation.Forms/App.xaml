@@ -13,6 +13,8 @@
                 <Setter Property="HorizontalOptions" Value="Start" />
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
+
+            <x:Double x:Key="EntryHeight">44</x:Double>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -10,6 +10,12 @@
             Text="{Binding FirstName, Mode=TwoWay}"
             ValidationId="FirstName" />
         <local:EntryView
+            Title="Last Name"
+            Text="{Binding LastName, Mode=TwoWay}"
+            ValidationId="LastName" />
+        <local:DatePickerView Title="Birth Date"/>
+        <local:PickerView Title="Gender" ItemsSource="{Binding Gender}"/>
+        <local:EntryView
             Title="Passport No"
             Text="{Binding PassportN, Mode=TwoWay}"
             ValidationId="PassportN" />

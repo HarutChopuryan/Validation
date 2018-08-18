@@ -9,6 +9,8 @@ namespace Validation.UI.ViewModels.Main
 
         string LastName { get; set; }
 
+        IList<string> Gender { get; set; }
+
         string PassportN { get; set; }
 
         string Address { get; set; }

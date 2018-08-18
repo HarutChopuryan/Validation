@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StackLayout xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Validation.Forms.Controls.EntryViews.PickerView"
+             x:Name="This"
+             Spacing="20"
+             Orientation="Horizontal"
+             Padding="0,5,0,5"
+             HeightRequest="{StaticResource EntryHeight}">
+    <Label
+        Text="{Binding Title, Source={x:Reference This}}"
+        Style="{StaticResource FormFieldLabelStyle}"
+        WidthRequest="{Binding TitleWidth, Source={x:Reference This}}" />
+    <Picker
+        x:Name="Picker"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand" />
+</StackLayout>

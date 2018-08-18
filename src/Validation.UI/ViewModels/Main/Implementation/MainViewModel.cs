@@ -18,8 +18,10 @@ namespace Validation.UI.ViewModels.Main.Implementation
 
         public string LastName { get; set; }
 
-        public string PassportN { get; set; }
+        public IList<string> Gender { get; set; } = new List<string> {"Male", "Female"};
 
+        public string PassportN { get; set; }
+        
         public string Address { get; set; }
 
         public string Country { get; set; }
