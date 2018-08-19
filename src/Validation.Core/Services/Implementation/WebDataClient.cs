@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Validation.Core.Models;
 
 namespace Validation.Core.Services.Implementation
 {
@@ -18,7 +21,7 @@ namespace Validation.Core.Services.Implementation
             _client = new HttpClient();
         }
 
-        public async Task<T> GetAsync<T>(string path, CancellationToken token = default(CancellationToken))
+        public async Task<List<Countries>> GetAsync(string path, CancellationToken token = default(CancellationToken))
         {
             var uriBuilder = new UriBuilder(ApiBaseUrl);
             uriBuilder.Path += path;
@@ -32,23 +35,20 @@ namespace Validation.Core.Services.Implementation
                 Debug.WriteLine(e);
             }
 
-            var response = await ParseResponse<T>(result);
+            var response = await ParseResponse<List<Countries>>(result);
             return response;
         }
 
-        private async Task<T> ParseResponse<T>(HttpResponseMessage result)
+        private async Task<List<Countries>> ParseResponse<T>(HttpResponseMessage result)
         {
             var jsonResult = await result.Content.ReadAsStringAsync();
-            object a = null;
-            try
+            var countries = JsonConvert.DeserializeObject<T>(jsonResult);
+            List<Countries> countriesList = new List<Countries>();
+            foreach (var country in (IEnumerable) countries)
             {
-                a = JsonConvert.DeserializeObject<T>(jsonResult);
+                countriesList.Add((Countries)country);
             }
-            catch (Exception e)
-            {
-                Debug.WriteLine(e);
-            }
-            return (T)a;
+            return countriesList;
         }
     }
 }

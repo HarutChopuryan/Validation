@@ -1,10 +1,12 @@
-﻿using System.Threading;
+﻿using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
+using Validation.Core.Models;
 
 namespace Validation.Core.Services
 {
     public interface IDataClient
     {
-        Task<T> GetAsync<T>(string path, CancellationToken token = default(CancellationToken));
+        Task<List<Countries>> GetAsync(string path, CancellationToken token = default(CancellationToken));
     }
 }

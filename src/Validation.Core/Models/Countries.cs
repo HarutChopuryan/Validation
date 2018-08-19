@@ -6,6 +6,6 @@ namespace Validation.Core.Models
     public class Countries
     {
         [JsonProperty("name")]
-        public List<string> CountryNames { get; set; }
+        public string CountryNames { get; set; }
     }
 }

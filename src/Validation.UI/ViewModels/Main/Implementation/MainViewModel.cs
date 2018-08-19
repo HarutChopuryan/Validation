@@ -29,7 +29,9 @@ namespace Validation.UI.ViewModels.Main.Implementation
         
         public string Address { get; set; }
 
-        public Countries Countries { get; set; }
+        public IList<string> Countries { get; set; }
+
+        public bool CountriesButtonVisibility { get; set; }
 
         public IList<string> Cities { get; set; }
 

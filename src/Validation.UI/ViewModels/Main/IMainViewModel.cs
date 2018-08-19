@@ -17,7 +17,9 @@ namespace Validation.UI.ViewModels.Main
 
         string Address { get; set; }
 
-        Countries Countries { get; set; }
+        IList<string> Countries { get; set; }
+
+        bool CountriesButtonVisibility { get; set; }
 
         IAsyncCommand LoadCountriesCommand { get; set; }
 
