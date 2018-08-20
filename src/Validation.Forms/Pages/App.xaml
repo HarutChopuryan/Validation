@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application
-    x:Class="Validation.Forms.App"
+    x:Class="Validation.Forms.Pages.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:converters="clr-namespace:Validation.Forms.Converters;assembly=Validation.Forms">
@@ -14,7 +14,11 @@
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
-            <x:Double x:Key="EntryHeight">44</x:Double>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
+
+            <x:Double x:Key="EntryHeight">50</x:Double>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

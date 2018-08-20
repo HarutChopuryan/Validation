@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Input;
-using Validation.Core.Models;
 using Validation.UI.ViewModels.Base;
 
 namespace Validation.UI.ViewModels.Main
@@ -11,22 +9,16 @@ namespace Validation.UI.ViewModels.Main
 
         string LastName { get; set; }
 
-        IList<string> Gender { get; set; }
+        IEnumerable<string> Gender { get; set; }
 
         string PassportN { get; set; }
 
         string Address { get; set; }
 
-        IList<string> Countries { get; set; }
-
-        bool CountriesButtonVisibility { get; set; }
-
-        IAsyncCommand LoadCountriesCommand { get; set; }
-
-        IList<string> Cities { get; set; }
-
-        IAsyncCommand LoadCitiesCommand { get; set; }
-
         string ZipCode { get; set; }
+
+        string Country { get; set; }
+
+        string City { get; set; }
     }
 }

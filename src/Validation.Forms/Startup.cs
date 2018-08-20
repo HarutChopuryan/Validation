@@ -1,4 +1,6 @@
 ﻿using Grace.DependencyInjection;
+using Validation.UI.ViewModels.Main;
+using Validation.UI.ViewModels.Main.Implementation;
 
 namespace Validation.Forms
 {

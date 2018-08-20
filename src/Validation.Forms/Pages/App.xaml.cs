@@ -4,7 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
-namespace Validation.Forms
+namespace Validation.Forms.Pages
 {
 	public partial class App : Application
 	{

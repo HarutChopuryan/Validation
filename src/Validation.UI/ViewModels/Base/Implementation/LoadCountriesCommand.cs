@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Validation.Core.Services;
@@ -8,34 +6,21 @@ using Validation.UI.ViewModels.Main.Implementation;
 
 namespace Validation.UI.ViewModels.Base.Implementation
 {
-    internal class LoadCountriesCommand : AsyncCommand
+    public class LoadCountriesCommand : AsyncCommand
     {
-        private readonly MainViewModel _mainViewModel;
         private readonly ICountriesService _countriesService;
+        private readonly CountryPickerViewModel _viewModel;
 
-        public LoadCountriesCommand(MainViewModel mainViewModel, ICountriesService countriesService)
+        public LoadCountriesCommand(CountryPickerViewModel viewModel, ICountriesService countriesService)
         {
-            _mainViewModel = mainViewModel;
-            _mainViewModel.Countries = new List<string>();
+            _viewModel = viewModel;
             _countriesService = countriesService;
         }
 
         protected override async Task<bool> ExecuteCoreAsync(object parameter = null, CancellationToken token = default(CancellationToken))
         {
-            try
-            {
-                if (_mainViewModel.Countries.Count == 0)
-                {
-                    var countries = await _countriesService.GetCountriesAsync();
-                    foreach (var country in countries)
-                        _mainViewModel.Countries.Add(country.CountryNames);
-                }
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-
+            var countries = await _countriesService.GetCountriesAsync(token);
+            _viewModel.Countries = countries.Select(country => country.Name).ToList();
             return true;
         }
     }

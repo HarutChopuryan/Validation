@@ -14,9 +14,9 @@ namespace Validation.Core.Services.Implementation
             _dataClient = dataClient;
         }
 
-        public Task<List<Countries>> GetCountriesAsync(CancellationToken token = default(CancellationToken))
+        public Task<List<Country>> GetCountriesAsync(CancellationToken token = default(CancellationToken))
         {
-            return _dataClient.GetAsync($"/all", token);
+            return _dataClient.GetAsync<List<Country>>("all", token);
         }
     }
 }

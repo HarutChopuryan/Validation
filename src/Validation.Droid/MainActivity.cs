@@ -3,7 +3,9 @@ using Android.Content.PM;
 using Android.OS;
 using Grace.DependencyInjection;
 using Validation.Core;
+using Validation.Core.DI;
 using Validation.Forms;
+using Validation.Forms.Pages;
 using Validation.UI;
 
 namespace Validation.Droid
@@ -24,6 +26,7 @@ namespace Validation.Droid
                 .RegisterUIDependencies()
                 .RegisterFormsDependencies()
                 .RegisterDroidDependencies();
+            ServiceLocator.Create(_container);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(_container));

@@ -4,8 +4,8 @@ namespace Validation.Forms.Controls.EntryViews
 {
     public class EntryView : BaseEntryView
     {
-        public EntryEx TextEntry { get; private set; }
-
+        public EntryEx TextEntry { get; protected set; }
+        
         public static readonly BindableProperty TextProperty = 
             BindableProperty.Create(nameof(Text),
                 typeof(string),

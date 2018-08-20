@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Validation.Forms.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms">
+    <ScrollView Padding="5">
+        <StackLayout>
+            <local:EntryView
+                Title="First Name"
+                Text="{Binding FirstName, Mode=TwoWay}"
+                ValidationId="FirstName" />
+            <local:EntryView
+                Title="Last Name"
+                Text="{Binding LastName, Mode=TwoWay}"
+                ValidationId="LastName" />
+            <local:DatePickerView Title="Birth Date" Margin="0" />
+            <local:PickerView Title="Gender" ItemsSource="{Binding Gender}" />
+            <local:EntryView
+                Title="Passport No"
+                Text="{Binding PassportN, Mode=TwoWay}"
+                ValidationId="PassportN" />
+            <local:EntryView
+                Title="Address"
+                Text="{Binding Address, Mode=TwoWay}"
+                ValidationId="Address" />
+            <local:CountryPicker
+                Title="Country"
+                Text="{Binding Country, Mode=TwoWay}"
+                ValidationId="Country" />
+            <local:EntryView Title="City" />
+            <local:EntryView
+                Title="Zip Code"
+                Text="{Binding ZipCode, Mode=TwoWay}"
+                ValidationId="ZipCode" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

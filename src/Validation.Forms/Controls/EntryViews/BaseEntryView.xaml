@@ -7,11 +7,12 @@
     xmlns:forms="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms"
     x:Name="This">
     <forms:BaseValidateableView.Content>
-        <StackLayout Padding="0" Spacing="2">
+        <StackLayout Padding="0" Spacing="0">
             <StackLayout.Children>
-                <StackLayout Orientation="Horizontal" Spacing="20">
+                <StackLayout Spacing="0">
                     <Label
                         x:Name="TitleLabel"
+                        Margin="4,0,0,0"
                         IsVisible="False"
                         Style="{StaticResource FormFieldLabelStyle}"
                         WidthRequest="{Binding TitleWidth, Source={x:Reference This}}" />

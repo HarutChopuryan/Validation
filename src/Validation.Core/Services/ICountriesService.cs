@@ -7,6 +7,6 @@ namespace Validation.Core.Services
 {
     public interface ICountriesService
     {
-        Task<List<Countries>> GetCountriesAsync(CancellationToken token = default(CancellationToken));
+        Task<List<Country>> GetCountriesAsync(CancellationToken token = default(CancellationToken));
     }
 }

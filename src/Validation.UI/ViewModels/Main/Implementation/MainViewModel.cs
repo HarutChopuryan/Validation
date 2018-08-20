@@ -16,30 +16,23 @@ namespace Validation.UI.ViewModels.Main.Implementation
         public MainViewModel(ICountriesService countriesService)
         {
             Validator = new MainValidator(this);
-            LoadCountriesCommand = new LoadCountriesCommand(this, countriesService);
         }
 
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
-        public IList<string> Gender { get; set; } = new List<string> {"Male", "Female"};
+        public IEnumerable<string> Gender { get; set; } = new List<string> {"Male", "Female"};
 
         public string PassportN { get; set; }
         
         public string Address { get; set; }
 
-        public IList<string> Countries { get; set; }
-
-        public bool CountriesButtonVisibility { get; set; }
-
-        public IList<string> Cities { get; set; }
-
-        public IAsyncCommand LoadCountriesCommand { get; set; }
-
-        public IAsyncCommand LoadCitiesCommand { get; set; }
-
         public string ZipCode { get; set; }
+
+        public string Country { get; set; }
+
+        public string City { get; set; }
 
         public IViewModelValidator Validator { get; }
     }
