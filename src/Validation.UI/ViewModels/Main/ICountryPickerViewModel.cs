@@ -5,12 +5,11 @@ namespace Validation.UI.ViewModels.Main
 {
     public interface ICountryPickerViewModel
     {
-        string SelectedCountry { get; set; }
-
         IAsyncCommand DoneCommand { get; }
 
         IAsyncCommand LoadCountriesCommand { get; }
 
         IEnumerable<string> Countries { get; }
+        string SelectedCountry { get; set; }
     }
 }

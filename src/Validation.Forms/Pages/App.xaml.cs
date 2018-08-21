@@ -9,11 +9,11 @@ namespace Validation.Forms.Pages
 	public partial class App : Application
 	{
 	    private readonly DependencyInjectionContainer _container;
+
         public App (DependencyInjectionContainer container)
 		{
 		    _container = container;
             InitializeComponent();
-
 		    MainPage = new NavigationPage(_container.Locate<MainPage>());
         }
 

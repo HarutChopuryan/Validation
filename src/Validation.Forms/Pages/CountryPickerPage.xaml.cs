@@ -1,5 +1,6 @@
 ﻿using System;
 using Validation.UI.ViewModels.Main;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Validation.Forms.Pages
@@ -7,21 +8,34 @@ namespace Validation.Forms.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CountryPickerPage
     {
-        private readonly ICountryPickerViewModel _countryPickerViewModel;
+        private readonly ICountryPickerViewModel _viewModel;
 
-        //public EventHandler<string> CountrySelected;
+        public EventHandler<string> CountrySelected;
 
-        public CountryPickerPage(ICountryPickerViewModel countryPickerViewModel)
+        public CountryPickerPage(ICountryPickerViewModel viewModel)
         {
-            _countryPickerViewModel = countryPickerViewModel;
+            _viewModel = viewModel;
             InitializeComponent();
-            BindingContext = _countryPickerViewModel;
+            BindingContext = _viewModel;
+            NavigationPage.SetHasBackButton(this, false);
+        }
+
+        public string SelectedCountry
+        {
+            get => _viewModel.SelectedCountry;
+            set => _viewModel.SelectedCountry = value;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _countryPickerViewModel.LoadCountriesCommand.Execute(null);
+            _viewModel.LoadCountriesCommand.Execute(null);
+        }
+
+        private async void OnDoneClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+            CountrySelected.Invoke(this, listView.SelectedItem.ToString());
         }
     }
 }

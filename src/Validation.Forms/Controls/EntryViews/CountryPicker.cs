@@ -11,16 +11,17 @@ namespace Validation.Forms.Controls.EntryViews
             TextEntry.Focused += TextEntryOnFocused;
         }
 
-        private void TextEntryOnFocused(object sender, FocusEventArgs e)
+        private async void TextEntryOnFocused(object sender, FocusEventArgs e)
         {
             var countryPickerPage = ServiceLocator.Instance.Locate<CountryPickerPage>();
-            //countryPickerPage.CountrySelected += CountrySelected;
-            Navigation.PushAsync(countryPickerPage);
+            countryPickerPage.SelectedCountry = Text;
+            countryPickerPage.CountrySelected += CountrySelected;
+            await Navigation.PushAsync(countryPickerPage, true);
         }
 
-        //private void CountrySelected(object sender, string country)
-        //{
-        //    Text = country;
-        //}
+        private void CountrySelected(object sender, string country)
+        {
+            Text = country;
+        }
     }
 }

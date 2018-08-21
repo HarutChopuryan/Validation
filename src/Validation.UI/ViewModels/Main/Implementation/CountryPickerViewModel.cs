@@ -17,12 +17,12 @@ namespace Validation.UI.ViewModels.Main.Implementation
             DoneCommand = new DoneCommand(this);
         }
 
-        public string SelectedCountry { get; set; }
-
         public IAsyncCommand DoneCommand { get; }
 
         public IAsyncCommand LoadCountriesCommand { get; }
 
         public IEnumerable<string> Countries { get; internal set; }
+
+        public string SelectedCountry { get; set; }
     }
 }
