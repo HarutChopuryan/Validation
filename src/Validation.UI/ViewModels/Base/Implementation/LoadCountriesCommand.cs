@@ -19,8 +19,11 @@ namespace Validation.UI.ViewModels.Base.Implementation
 
         protected override async Task<bool> ExecuteCoreAsync(object parameter = null, CancellationToken token = default(CancellationToken))
         {
-            var countries = await _countriesService.GetCountriesAsync(token);
-            _viewModel.Countries = countries.Select(country => country.Name).ToList();
+            if (_viewModel.Countries == null || _viewModel.Countries.Count() == 0)
+            {
+                var countries = await _countriesService.GetCountriesAsync(token);
+                _viewModel.Countries = countries.Select(country => country.Name).ToList();
+            }
             return true;
         }
     }

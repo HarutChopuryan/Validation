@@ -17,7 +17,6 @@ namespace Validation.UI.ViewModels.Base.Implementation
 
         protected override async Task<bool> ExecuteCoreAsync(object parameter = null, CancellationToken token = default(CancellationToken))
         {
-            Debug.Write("asdff");
             return true;
         }
     }
