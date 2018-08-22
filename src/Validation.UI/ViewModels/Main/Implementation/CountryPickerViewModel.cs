@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using PropertyChanged;
 using Validation.Core.Services;
@@ -13,6 +14,7 @@ namespace Validation.UI.ViewModels.Main.Implementation
     {
         public CountryPickerViewModel(ICountriesService countriesService)
         {
+            Countries = new List<string>();
             LoadCountriesCommand = new LoadCountriesCommand(this, countriesService);
             DoneCommand = new DoneCommand(this);
         }
@@ -21,7 +23,7 @@ namespace Validation.UI.ViewModels.Main.Implementation
 
         public IAsyncCommand LoadCountriesCommand { get; }
 
-        public IEnumerable<string> Countries { get; internal set; }
+        public IList<string> Countries { get; set; }
 
         public string SelectedCountry { get; set; }
     }

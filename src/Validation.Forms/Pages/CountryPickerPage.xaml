@@ -6,10 +6,15 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ActivityIndicator
+        <SearchBar
+            x:Name="searchBar"
             Grid.Row="0"
+            TextChanged="SearchBar_OnTextChanged" />
+        <ActivityIndicator
+            Grid.Row="1"
             HorizontalOptions="Center"
             IsRunning="{Binding LoadCountriesCommand.IsBusy}"
             IsVisible="{Binding LoadCountriesCommand.IsBusy}"
@@ -17,7 +22,7 @@
             Color="DarkGray" />
         <ListView
             x:Name="listView"
-            Grid.Row="0"
+            Grid.Row="1"
             ItemsSource="{Binding Countries}"
             SelectedItem="{Binding SelectedCountry, Mode=TwoWay}"
             SeparatorVisibility="None">

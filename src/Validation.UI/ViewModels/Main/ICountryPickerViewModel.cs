@@ -9,7 +9,7 @@ namespace Validation.UI.ViewModels.Main
 
         IAsyncCommand LoadCountriesCommand { get; }
 
-        IEnumerable<string> Countries { get; }
+        IList<string> Countries { get; set; }
 
         string SelectedCountry { get; set; }
     }
