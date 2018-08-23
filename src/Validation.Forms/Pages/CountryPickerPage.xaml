@@ -3,11 +3,13 @@
 <ContentPage
     x:Class="Validation.Forms.Pages.CountryPickerPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:entryViews="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <SearchBar
             x:Name="searchBar"
@@ -32,6 +34,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <entryViews:FailureView Grid.Row="2" IsVisible="True" />
     </Grid>
     <ContentPage.ToolbarItems>
         <ToolbarItem

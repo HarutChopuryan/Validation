@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Threading;
+using System.Windows.Input;
 using Validation.UI.ViewModels.Base;
 
 namespace Validation.UI.ViewModels.Main
@@ -9,8 +11,16 @@ namespace Validation.UI.ViewModels.Main
 
         IAsyncCommand LoadCountriesCommand { get; }
 
-        IList<string> Countries { get; set; }
+        IAsyncCommand SearchCommand { get; set; }
+
+        IEnumerable<string> Countries { get; }
+
+        IEnumerable<string> BaseItems { get; }
 
         string SelectedCountry { get; set; }
+
+        string SearchText { get; set; }
+
+        int Count { get; set; }
     }
 }

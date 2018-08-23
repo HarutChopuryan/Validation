@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading;
+using System.Windows.Input;
 using PropertyChanged;
 using Validation.Core.Services;
 using Validation.UI.ViewModels.Base;
@@ -14,17 +16,25 @@ namespace Validation.UI.ViewModels.Main.Implementation
     {
         public CountryPickerViewModel(ICountriesService countriesService)
         {
-            Countries = new List<string>();
             LoadCountriesCommand = new LoadCountriesCommand(this, countriesService);
             DoneCommand = new DoneCommand(this);
+            SearchCommand = new SearchCommand(this);
         }
 
         public IAsyncCommand DoneCommand { get; }
 
         public IAsyncCommand LoadCountriesCommand { get; }
 
-        public IList<string> Countries { get; set; }
+        public IAsyncCommand SearchCommand { get; set; }
+
+        public IEnumerable<string> Countries { get; internal set; }
+
+        public IEnumerable<string> BaseItems { get; internal set; }
 
         public string SelectedCountry { get; set; }
+
+        public string SearchText { get; set; }
+
+        public int Count { get; set; }
     }
 }

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<StackLayout
+    x:Class="Validation.Forms.Controls.EntryViews.FailureView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <Label Text="No results" />
+    <Button Clicked="OnTryAgainClicked" Text="Try Again" />
+</StackLayout>
