@@ -35,6 +35,8 @@ namespace Validation.UI.ViewModels.Main.Implementation
 
         public string SearchText { get; set; }
 
+        public string SearchNotFound { get; set; }
+
         public int Count { get; set; }
     }
 }

@@ -1,15 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
     x:Class="Validation.Forms.Pages.CountryPickerPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converters="clr-namespace:Validation.Forms.Converters;assembly=Validation.Forms"
     xmlns:entryViews="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:VisibilityConverter x:Key="visibilityConverter" />
+            <converters:PlaceholderVisibilityConverter x:Key="placeholderVisibilityConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <SearchBar
             x:Name="searchBar"
@@ -34,7 +39,19 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <entryViews:FailureView Grid.Row="2" IsVisible="True" />
+        <Label
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand"
+            IsVisible="{Binding Countries, Converter={StaticResource placeholderVisibilityConverter}}"
+            Text="{Binding SearchNotFound}"
+            VerticalOptions="CenterAndExpand" />
+        <entryViews:FailureView
+            Grid.Row="1"
+            HorizontalOptions="Center"
+            IsVisible="{Binding Path=LoadCountriesCommand.FailureMessage, Converter={StaticResource visibilityConverter}}"
+            Message="{Binding LoadCountriesCommand.FailureMessage}"
+            TryAgainCommand="{Binding LoadCountriesCommand}"
+            VerticalOptions="Center" />
     </Grid>
     <ContentPage.ToolbarItems>
         <ToolbarItem

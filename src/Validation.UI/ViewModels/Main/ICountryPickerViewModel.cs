@@ -19,6 +19,8 @@ namespace Validation.UI.ViewModels.Main
 
         string SelectedCountry { get; set; }
 
+        string SearchNotFound { get; set; }
+
         string SearchText { get; set; }
 
         int Count { get; set; }

@@ -34,6 +34,8 @@ namespace Validation.UI.ViewModels.Base.Implementation
                         .ToList();
                     ++_viewModel.Count;
                     _viewModel.Countries = result;
+                    if (!_viewModel.Countries.Any())
+                        _viewModel.SearchNotFound = "Country not found";
                 }
                 else
                 {

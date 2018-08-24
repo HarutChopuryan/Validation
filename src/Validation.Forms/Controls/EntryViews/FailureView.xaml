@@ -2,7 +2,12 @@
 <StackLayout
     x:Class="Validation.Forms.Controls.EntryViews.FailureView"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
-    <Label Text="No results" />
-    <Button Clicked="OnTryAgainClicked" Text="Try Again" />
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Name="This">
+    <Label HorizontalOptions="Center" Text="{Binding Message, Source={x:Reference This}}" />
+    <Button
+        Command="{Binding TryAgainCommand, Source={x:Reference This}}"
+        HorizontalOptions="Center"
+        Text="Try Again"
+        WidthRequest="150" />
 </StackLayout>

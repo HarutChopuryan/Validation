@@ -5,34 +5,86 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms">
     <ScrollView Padding="5">
-        <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
             <local:EntryView
                 Title="First Name"
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Text="{Binding FirstName, Mode=TwoWay}"
                 ValidationId="FirstName" />
             <local:EntryView
                 Title="Last Name"
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Text="{Binding LastName, Mode=TwoWay}"
                 ValidationId="LastName" />
-            <local:DatePickerView Title="Birth Date" Margin="0" />
-            <local:PickerView Title="Gender" ItemsSource="{Binding Gender}" />
+            <local:DatePickerView
+                Title="Birth Date"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0" />
+            <local:PickerView
+                Title="Gender"
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                ItemsSource="{Binding Gender}" />
             <local:EntryView
                 Title="Passport No"
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Text="{Binding PassportN, Mode=TwoWay}"
                 ValidationId="PassportN" />
             <local:EntryView
                 Title="Address"
+                Grid.Row="5"
+                Grid.Column="0"
                 Text="{Binding Address, Mode=TwoWay}"
                 ValidationId="Address" />
+            <Button
+                Grid.Row="5"
+                Grid.Column="1"
+                BackgroundColor="Transparent"
+                HeightRequest="30"
+                HorizontalOptions="Start"
+                Image="location.png"
+                VerticalOptions="Start"
+                WidthRequest="25" />
             <local:CountryPicker
                 Title="Country"
+                Grid.Row="6"
+                Grid.Column="0"
                 Text="{Binding Country, Mode=TwoWay}"
                 ValidationId="Country" />
-            <local:EntryView Title="City" />
+            <local:EntryView
+                Title="City"
+                Grid.Row="7"
+                Grid.Column="0" />
             <local:EntryView
                 Title="Zip Code"
+                Grid.Row="8"
+                Grid.Column="0"
                 Text="{Binding ZipCode, Mode=TwoWay}"
                 ValidationId="ZipCode" />
-        </StackLayout>
+        </Grid>
     </ScrollView>
 </ContentPage>
