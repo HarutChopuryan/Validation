@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Grace" Version="6.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="3.1.0.697729" />
   </ItemGroup>
 
 </Project>

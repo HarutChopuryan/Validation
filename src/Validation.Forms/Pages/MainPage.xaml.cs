@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Validation.Core.DI;
 using Validation.Core.Services;
 using Validation.Core.Services.Implementation;
 using Validation.Forms.Pages;
@@ -23,5 +24,11 @@ namespace Validation.Forms.Pages
             InitializeComponent();
             BindingContext = _viewModel;
 		}
+
+	    private void OnLocateClicked(object sender, EventArgs e)
+	    {
+	        var mapPage = ServiceLocator.Instance.Locate<MapPage>();
+	        Navigation.PushAsync(mapPage);
+	    }
 	}
 }
