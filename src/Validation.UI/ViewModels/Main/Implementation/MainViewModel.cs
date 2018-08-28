@@ -7,6 +7,7 @@ using Validation.Core.Services;
 using Validation.UI.Validators;
 using Validation.UI.ViewModels.Base;
 using Validation.UI.ViewModels.Base.Implementation;
+using Xamarin.Forms.Maps;
 
 namespace Validation.UI.ViewModels.Main.Implementation
 {
@@ -33,6 +34,8 @@ namespace Validation.UI.ViewModels.Main.Implementation
         public string Country { get; set; }
 
         public string City { get; set; }
+
+        public Position Coordinates { get; set; }
 
         public IViewModelValidator Validator { get; }
     }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Validation.UI.ViewModels.Base;
+using Xamarin.Forms.Maps;
 
 namespace Validation.UI.ViewModels.Main
 {
@@ -20,5 +21,7 @@ namespace Validation.UI.ViewModels.Main
         string Country { get; set; }
 
         string City { get; set; }
+
+        Position Coordinates { get; set; }
     }
 }

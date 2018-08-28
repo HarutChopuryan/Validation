@@ -1,4 +1,5 @@
-﻿using Android.Gms.Maps;
+﻿using Android.Content;
+using Android.Gms.Maps;
 using Validation.Droid;
 using Validation.Forms.Controls.EntryViews;
 using Xamarin.Forms;
@@ -13,6 +14,10 @@ namespace Validation.Droid
     public class ExtendedMapRenderer : MapRenderer, IOnMapReadyCallback
     {
         private GoogleMap _map;
+
+        public ExtendedMapRenderer(Context context) : base(context)
+        {
+        }
 
         public void OnMapReady(GoogleMap googleMap)
         {

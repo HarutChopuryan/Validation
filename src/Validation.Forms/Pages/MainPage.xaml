@@ -79,7 +79,8 @@
             <local:EntryView
                 Title="City"
                 Grid.Row="7"
-                Grid.Column="0" />
+                Grid.Column="0"
+                Text="{Binding City}" />
             <local:EntryView
                 Title="Zip Code"
                 Grid.Row="8"

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Grace.DependencyInjection.Lifestyle;
 using Validation.Core.DI;
 using Validation.Core.Services;
 using Validation.Core.Services.Implementation;
@@ -27,7 +28,7 @@ namespace Validation.Forms.Pages
 
 	    private void OnLocateClicked(object sender, EventArgs e)
 	    {
-	        var mapPage = ServiceLocator.Instance.Locate<MapPage>();
+	        var mapPage = ServiceLocator.Instance.Locate<MapPage>(LifestyleType.Singleton);
 	        Navigation.PushAsync(mapPage);
 	    }
 	}

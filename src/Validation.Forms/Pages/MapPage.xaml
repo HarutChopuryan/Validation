@@ -5,5 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:entryViews="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms"
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
-    <entryViews:ExtendedMap IsShowingUser="True" />
+    <entryViews:ExtendedMap
+        x:Name="map"
+        HasScrollEnabled="True"
+        HasZoomEnabled="True"
+        IsShowingUser="True" />
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnMapDoneClicked" Text="Done" />
+    </ContentPage.ToolbarItems>
 </ContentPage>

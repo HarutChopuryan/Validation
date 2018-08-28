@@ -9,7 +9,7 @@ namespace Validation.UI
     {
         public static DependencyInjectionContainer RegisterUIDependencies(this DependencyInjectionContainer container)
         {
-            container.Add(block => block.Export<MainViewModel>().As<IMainViewModel>());
+            container.Add(block => block.Export<MainViewModel>().As<IMainViewModel>().UsingLifestyle(new SingletonLifestyle()));
             container.Add(block => block.Export<CountryPickerViewModel>().As<ICountryPickerViewModel>().UsingLifestyle(new SingletonLifestyle()));
             return container;
         }
