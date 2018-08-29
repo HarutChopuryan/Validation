@@ -5,11 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:entryViews="clr-namespace:Validation.Forms.Controls.EntryViews;assembly=Validation.Forms"
     xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
-    <entryViews:ExtendedMap
-        x:Name="map"
-        HasScrollEnabled="True"
-        HasZoomEnabled="True"
-        IsShowingUser="True" />
+    <AbsoluteLayout>
+        <ContentView
+            x:Name="MainContent"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <Image
+            AbsoluteLayout.LayoutBounds="0.5,0.390625,70,70"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Source="geolocation.png" />
+    </AbsoluteLayout>
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnMapDoneClicked" Text="Done" />
     </ContentPage.ToolbarItems>
