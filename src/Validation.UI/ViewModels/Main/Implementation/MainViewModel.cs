@@ -17,6 +17,7 @@ namespace Validation.UI.ViewModels.Main.Implementation
         public MainViewModel(ICountriesService countriesService)
         {
             Validator = new MainValidator(this);
+            LocateCommand = new LocateCommand(this);
         }
 
         public string FirstName { get; set; }
@@ -26,7 +27,11 @@ namespace Validation.UI.ViewModels.Main.Implementation
         public IEnumerable<string> Gender { get; set; } = new List<string> {"Male", "Female"};
 
         public string PassportN { get; set; }
-        
+
+        public IAsyncCommand LocateCommand { get; set; }
+
+        public Map Map { get; set; }
+
         public string Address { get; set; }
 
         public string ZipCode { get; set; }

@@ -80,7 +80,7 @@
                 Title="City"
                 Grid.Row="7"
                 Grid.Column="0"
-                Text="{Binding City}" />
+                Text="{Binding City, Mode=TwoWay}" />
             <local:EntryView
                 Title="Zip Code"
                 Grid.Row="8"

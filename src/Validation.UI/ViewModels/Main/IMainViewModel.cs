@@ -6,6 +6,8 @@ namespace Validation.UI.ViewModels.Main
 {
     public interface IMainViewModel : IValidateableViewModel
     {
+        IAsyncCommand LocateCommand { get; set; }
+
         string FirstName { get; set; }
 
         string LastName { get; set; }
@@ -13,6 +15,8 @@ namespace Validation.UI.ViewModels.Main
         IEnumerable<string> Gender { get; set; }
 
         string PassportN { get; set; }
+
+        Map Map { get; set; }
 
         string Address { get; set; }
 
